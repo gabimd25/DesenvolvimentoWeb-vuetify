@@ -13,17 +13,11 @@
         <v-icon>mdi-battery</v-icon>
         <span>12:30</span>
       </v-system-bar>
+      
     </div>
 
-    <v-app-bar
-    color="primary lighten-1"
-    app
-    >
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+    <Appbar> </Appbar>
 
-      <v-toolbar-title>Mais Opções</v-toolbar-title>
-
-    </v-app-bar>
   
     <v-navigation-drawer
       dark
@@ -50,7 +44,7 @@
     </v-navigation-drawer>
 
     <v-main>
-       <HelloWorld />
+       <router-view/>
     </v-main>
 
     <v-footer
@@ -106,15 +100,16 @@
 </template>
 
 <script>
-  import HelloWorld from './components/HelloWorld.vue'
+  import Appbar from "@/components/Appbar"
 
   export default {
     data: () => ({ 
       drawer: null,
       items: [
           ['mdi-email', 'Inbox'],
-          ['mdi-account-supervisor-circle', 'Supervisors'],
-          ['mdi-clock-start', 'Clock-in'],
+          ['mdi-account-supervisor-circle', 'Posts'],
+          ['mdi-clock-start', 'About'],
+          ['mdi-heart','MyPosts']
       ],
       value: 1,
       items2: [
@@ -137,7 +132,7 @@
     }),
     name: 'App',
     components: {
-    HelloWorld
+    Appbar
     }
   }
 </script>
