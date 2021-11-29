@@ -15,9 +15,19 @@
       </v-system-bar>
       
     </div>
+    
+    <v-app-bar
+    color="primary lighten-1"
+    app
+    >
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-    <Appbar> </Appbar>
-
+      <v-toolbar-title>Mais Opções</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <Toolbar></Toolbar>
+      
+    </v-app-bar>
   
     <v-navigation-drawer
       dark
@@ -100,7 +110,7 @@
 </template>
 
 <script>
-  import Appbar from "@/components/Appbar"
+  import Toolbar from "@/components/Toolbar"
 
   export default {
     data: () => ({ 
@@ -132,7 +142,7 @@
     }),
     name: 'App',
     components: {
-    Appbar
+      Toolbar
     }
   }
 </script>
